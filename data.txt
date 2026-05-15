@@ -1,0 +1,22 @@
+This is a large test file used for verifying network file transfer between a client and a server application. The purpose of this text is to simulate real-world file transmission scenarios where data integrity, completeness, and correctness are critical.
+
+In modern distributed systems, reliable file transfer is a fundamental requirement. Data must be transmitted over potentially unstable networks, which may introduce packet loss, delays, or reordering. Therefore, protocols are designed to ensure that even large files can be sent and reconstructed correctly on the receiving side.
+
+This file contains multiple paragraphs of repeated structured content to increase its size. It is not meaningful in terms of information, but it is useful for stress testing socket communication and buffer handling.
+
+Lorem ipsum style section:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.
+
+Testing section:
+The quick brown fox jumps over the lazy dog. This sentence is often used for testing because it contains every letter of the English alphabet. Repeating such sentences helps to increase file size quickly without needing meaningful content.
+
+Another paragraph:
+Networking applications must handle streaming data efficiently. This means reading and writing in chunks, managing buffers, and ensuring that no data is lost during transmission. TCP sockets provide reliable ordered delivery, but developers must still properly implement reading loops and termination conditions.
+
+Security-related filler:
+In secure systems, data integrity is ensured using cryptographic hash functions such as SHA-256. These functions generate a fixed-length fingerprint of data, which can be used to verify that the file has not been modified during transmission.
+
+Final section:
+This file serves purely as a test payload. It can be duplicated, extended, or modified to increase its size further. The goal is to simulate a realistic file transfer scenario for debugging and validation purposes.
+
+End of test file.

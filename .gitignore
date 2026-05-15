@@ -1,3 +1,8 @@
 __pychache__/
 .env
 .venv/
+private.pem
+public.pem
+*.pyc
+received_packet.bin
+decrypted_file.txt
