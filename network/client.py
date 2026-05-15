@@ -6,6 +6,8 @@ from core.keys_manager import ensure_rsa_keys, get_aes_key, get_manual_aes_key_a
 HOST = "127.0.0.1"
 PORT = 5000
 
+CLIENT_FILES_DIR = "files/client_files"
+
 PRIVATE_KEY_PATH = "private.pem"
 PUBLIC_KEY_PATH = "public.pem"
 
@@ -82,11 +84,13 @@ def main():
             print("File path is empty.")
             continue
 
+        if not os.path.isabs(file_path):
+            file_path = os.path.join(CLIENT_FILES_DIR, file_path)
+
         if not os.path.exists(file_path):
             print(f"File not found: {file_path}")
             continue
 
-#-------------------Main loop-------------------#
         aes_key, choice, manual_key_hash = choose_aes_key()
         packet = encrypt_and_package(file_path, aes_key, private_key, public_key, choice, manual_key_hash)
         send_packet(packet)

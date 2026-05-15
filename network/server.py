@@ -1,3 +1,4 @@
+import os
 import socket
 from core.packet_protocol import parse_packet
 from crypto.rsa import load_private_key, load_public_key, decrypt_aes_key_with_rsa
@@ -9,12 +10,14 @@ from core.keys_manager import get_manual_aes_key_and_hash
 HOST = "127.0.0.1"
 PORT = 5000
 
+SERVER_FILES_DIR = "files/server_files"
+RECEIVED_PACKET_PATH = os.path.join(SERVER_FILES_DIR, "received_data.bin")
+OUTPUT_FILE = os.path.join(SERVER_FILES_DIR, "decrypted_file.txt")
+
 CHUNK_SIZE = 4096
 
 PRIVATE_KEY_PATH = "private.pem"
 PUBLIC_KEY_PATH = "public.pem"
-
-OUTPUT_FILE = "decrypted_file.txt"
 
 def receive_packet(conn):
     packet_size_bytes = conn.recv(8)
@@ -69,7 +72,7 @@ def process_packet(data, packet_size, chunk_count, addr):
 
             print("Wrong manual AES key. Try again.")
 
-    with open("received_data.bin", "wb") as f:
+    with open(RECEIVED_PACKET_PATH, "wb") as f:
         f.write(data)
 
     print("Saved received data to received_data.bin")
